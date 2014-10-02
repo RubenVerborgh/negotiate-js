@@ -96,7 +96,7 @@ var exports = exports || this,
 				}
 				return newObj;
 			} else {
-				return Array.pototype.slice.call(obj);
+				return Array.prototype.slice.call(obj);
 			}
 			break;
 		case 'function':
@@ -185,7 +185,7 @@ var exports = exports || this,
 	function choose(variants, request) {
 		var y, yl, x, xl, headers, variant, accepts, variantValue, requestValue, params, q, match;
 		
-		variants = clone(variants, true);
+		variants = clone(variants, false);
 		headers = {
 			method : uc(request['method'], 'GET'),
 			acceptType : parseHeaderElements(request.headers['accept']),
